@@ -50,6 +50,12 @@ public class NPCharacter : MonoBehaviour
     public List<int> EnemyIDs;
     public int PrefabNumber;
 
+    [Header("Quest")]
+    public List<int> OnDeathQuests;
+    public List<int> OnDeathProgress;
+    public List<int> OnMeetQuests;
+    public List<int> OnMeetProgress;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -151,6 +157,11 @@ public class NPCharacter : MonoBehaviour
             {
                 animator.SetBool("Dead", true);
                 animator.SetTrigger("Death");
+                foreach(int x in OnDeathQuests)
+                {
+                    MainMenu.mainMenu.Quests[x].Progress[OnDeathProgress[x]];
+                }
+                
                 foreach(Collider col in GetComponentsInChildren<Collider>())
                 {
                     col.enabled = false;

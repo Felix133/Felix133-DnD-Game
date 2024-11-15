@@ -28,6 +28,8 @@ public class MainMenu : MonoBehaviour
     
     public List<List<int>> Relations = new List<List<int>>();
 
+    public List<Quest> Quests;
+
     [Header("Keys")]
     public KeyCode Forward;
     public KeyCode Backwards;

@@ -1,0 +1,5 @@
+public class Quest : MonoBehaviour
+{
+    public List<int> Progress;
+    public List<int> DependentOn;   //which Quest need to be completed before
+}
